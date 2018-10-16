@@ -1,0 +1,272 @@
+<!-- All photos are free to use from https://unsplash.com, https://www.mediakatalogas.lt -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-127569002-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-127569002-1');
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="description" content="Paprasto žmogaus paprastos eilės apie gyvenimo prasmę ir laikinumą, besikeičiančią gamtą ir žmones, kasdienius džiaugsmus ir rūpesčius. Smagaus skaitymo">
+  <link rel="shortcut icon" type="image/png" href="img/laiskai7.png">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
+    crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+    crossorigin="anonymous">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="js/functions.js"></script>
+
+  <script>
+    $(document).ready(function() { 
+      checkBrowser();             
+      generatePageContent();     
+    });
+  </script>
+
+  <title>Virgio laiškai</title>
+
+</head>
+
+<body>
+
+  <!-- Main navigation -->
+  <nav id="main-nav" class="navbar navbar-dark bg-dark fixed-top">
+    <div class="container">
+      <a href="index.html">
+        <div class="navbar-brand">
+          <img class="d-none d-sm-inline" src="img/laiskai7.png" alt="">
+          Virgio laiškai
+        </div>
+      </a>
+      <ul class="navbar-nav">
+        <div class="d-flex">
+          <li class=" nav-item
+                mr-3" id="nav-container">
+            <a href="#" class="nav-link" data-toggle="collapse" data-target="#additional-nav" id="additional-nav-opener">
+              <i class="fas fa-search"></i>
+            </a>
+          </li>
+          <li class="nav-item mr-3 pl-4">
+            <a href="https://www.facebook.com/virgilijus.juknevicius" target="_blank" class="nav-link">
+              <i class="fab fa-facebook"></i>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="mailto:virvil@gmail.com" class="nav-link">
+              <i class="fas fa-envelope"></i>
+            </a>
+          </li>
+        </div>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Search navigation -->
+  <section id="additional-nav" class="bg-white collapse show">
+    <div class="container">
+      <div class="d-flex flex-wrap" id="filter">
+        <button data-show="visi" type="button" class="btn btn-light btn-sm">Visi</button>
+        <button data-show="geriausi" type="button" class="btn btn-light btn-sm">
+          <i class="fas fa-feather"></i>
+          5 Geriausi
+        </button>
+        <button data-show="naujausi" type="button" class="btn btn-light btn-sm">
+          <i class="fas fa-calendar-alt"></i>
+          5 Naujausi
+        </button>
+        <button id="randomPoem" data-show="atsitiktinis" type="button" class="btn btn-light btn-sm">
+          <i class="fas fa-random"></i>
+          Atsitiktinis
+        </button>
+        <div class="input-group ml-auto" id="search">
+          <input class="form-control" type="text" id="search-text" placeholder="įrašykite žodį...">
+          <div class="input-group-append">
+            <button class="btn btn-light" type="submit" data-show="search" id="search-button">
+              Ieškoti
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="card mb-2">
+        <div class="card-body" id="categories">
+          <div class=" d-flex flex-wrap" id="categories">
+            <!-- generated content -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Browser check -->
+  <div id="browser" class="hidden">
+  </div>
+
+  <!-- Main alert-->
+  <div id="alert-box" class="container">
+  </div>
+
+  <!-- Main content -->
+  <section id="main-content">
+    <div id="myCarousel" class="carousel slide lazy" data-ride="carousel">
+      <div class="carousel-inner" id="carousel-inner">
+        <!-- generated content -->
+      </div>
+      <div id="arrows">
+        <!-- slider arrows -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Message about IP -->
+  <div class="container hidden" id="ip-alert">
+    <div class="alert alert-dark alert-dismissable">
+      <button class="close" type="button" data-dismiss="alert">
+        <span>&times;</span>
+      </button>
+      <p> Informuojame, kad vertinant eilėraščius saugomas vertintojo <strong>IP adresas</strong>.</p>
+      <p> Šie duomenys saugomi siekiant užtikrinti, kad už vieną eilėraštį būtų balsuojama tik vieną kartą.</p>
+    </div>
+  </div>
+
+  <!-- About me -->
+  <section id="about" class="bg-grey text-white hidden">
+    <div class="container">
+      <div class="row mt-3 py-3">
+        <div class="col-md-4 align-self-center">
+          <img src="img/virgilijus.jpg" alt="author1" class="img-fluid rounded-circle mb-3">
+        </div>
+        <div class="col-md-8 p-5">
+          <h4 class="display-5">
+            Apie mane
+          </h4>
+          <p>
+            Jau 35 metai kaip mokytojas, vyras, trijų dukrų tėtis, fizikas, bitininkas, statybininkas, kompiuteristas,
+            teisybės
+            ieškotojas, popieriaus terliotojas...
+          </p>
+          <p>
+            Pilnas idėjų ir planų bei kartais gal kiek kandaus humoro :)
+            Mano lyrinis herojus leidžia sau žymiai daugiau nei aš pats sau leidžiu, todėl prašau nesmerkti manęs,
+            neguosti žmonos dėl mano lyrinio herojaus paklydimų.
+          </p>
+          <p class="mb-2">Smagaus skaitymo!</p>
+          <p>Virgis</p>
+          <hr>
+          <p>
+            Kviečiu aplankyti ir kitą mano interneto svetainę:
+          </p>
+          <a class="btn btn-outline-light mb-2" href="http://www.netikfizika.lt/tik/" target="_new">
+            Programėlės
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer text-center p-3 bg-dark text-white hidden" id="footer">
+    <div class="container">
+      &copy;
+      <span id="year"></span>
+      <span>Virgio laiškai</span>
+      <p class="text-muted">Norint publikuoti eilėraščius, reikalingas autoriaus sutikimas</p>
+    </div>
+  </footer>
+
+
+  <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+    crossorigin="anonymous"></script>
+
+  <script>
+    // configure slider
+    $(".carousel").carousel({
+      interval: false,
+      pause: "hover"
+    });
+
+    // configure slider for touch devices
+    $(".carousel").on("touchstart", function (event) {
+      var xClick = event.originalEvent.touches[0].pageX;
+      $(this).one("touchmove", function (event) {
+        var xMove = event.originalEvent.touches[0].pageX;
+        if (Math.floor(xClick - xMove) > 7) {
+          $(this).carousel('next');
+        } else if (Math.floor(xClick - xMove) < -7) {
+          $(this).carousel('prev');
+        }
+      });
+      $(".carousel").on("touchend", function () {
+        $(this).off("touchmove");
+      });
+    });
+
+    // listen for arrow events for slider
+    window.addEventListener("keydown", prevNextArrows);
+
+    function prevNextArrows(e) {
+      switch (e.which) {
+        case 37: // left
+          $("#myCarousel").carousel("prev");
+          break;
+        case 39: // right
+          $("#myCarousel").carousel("next");
+          break;
+      }
+    }
+
+    // change poem id, when clicking prev or next on the slider
+    $("#myCarousel").on("slid.bs.carousel", function () {
+      var poemId = $(".carousel-item.active").attr("id");
+      changeUrl("id", poemId);
+      $("#ip-alert").hide();
+    });
+
+    // configure filter 
+    $("#additional-nav").on("click", "button[data-show], a[data-show]", configureFilter);
+
+    // lazy load images in slider
+    $(".carousel.lazy").on("slide.bs.carousel", function (e) {
+      var lazy;
+      lazy = $(e.relatedTarget).find("img[data-src]");
+      lazy.attr("src", lazy.data("src"));
+      lazy.removeAttr("data-src");
+    });
+
+    // process voting for poem 
+    $("#carousel-inner").on("click", ".fa-feather", function () {
+      $("#message").html("");
+      var rating = $(this).attr("id");
+      var id = $(".carousel-item.active").attr("id");
+      updateRatingData(id, rating);
+    });
+
+    // listen for Enter on search form input
+    $("#search-text").keypress(function (e) {
+      if (e.which === 13) {
+        $("#search-button").click();
+      }
+    });
+
+    // get the current year for the footer
+    $("#year").text(new Date().getFullYear());
+  </script>
+
+</body>
+
+</html>
